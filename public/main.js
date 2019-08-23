@@ -83,6 +83,7 @@ const createResultDsiplay = () => {
   backHomeBtn.addEventListener('click', () => {
     createHomeDisplay();
     document.getElementById("backHomeBtn").remove();
+    score = 0;
   })
   title.textContent = `あなたの正答数は${score}です`;
   quistionInfo.textContent = '';
