@@ -1,5 +1,6 @@
 'use strict';
 const title = document.getElementById('title');
+const questionInfo = document.getElementById('question-info');
 const categoryTag = document.getElementById('category-tag');
 const difficultyTag = document.getElementById('difficulty-tag');
 const category = document.getElementById('category');
@@ -11,9 +12,12 @@ let score = 0;
 
 // ホーム画面生成の関数
 const createHomeDisplay = () => {
+  questionInfo.classList.remove('hidden');
   title.textContent = 'ようこそ';
   categoryTag.textContent = '【ジャンル】';
   difficultyTag.textContent = '【難易度】';
+  category.textContent = '';
+  difficulty.textContent = '';
   question.textContent = '以下のボタンをクリック';
   const startBtn = document.createElement('button');
   startBtn.textContent = '開始';
@@ -75,7 +79,6 @@ const createChoiceBtn = (quizData, index) => {
 };
 // 結果の画面を表示する関数
 const createResultDsiplay = () => {
-  const quistionInfo = document.getElementById('question-info');
   const backHomeBtn = document.createElement('button');
   backHomeBtn.id = 'backHomeBtn';
   backHomeBtn.textContent = 'ホームに戻る';
@@ -86,7 +89,7 @@ const createResultDsiplay = () => {
     score = 0;
   })
   title.textContent = `あなたの正答数は${score}です`;
-  quistionInfo.textContent = '';
+  questionInfo.classList.add('hidden');
   question.textContent = '再チャレンジしたい場合は下をクリック';
   btnArea.appendChild(backHomeBtn);
 }
