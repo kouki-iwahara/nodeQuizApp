@@ -15,6 +15,11 @@ const createHomeDisplay = () => {
   startBtn.textContent = '開始';
 
   btnArea.appendChild(startBtn);
+  startBtn.addEventListener('click', async () => {
+    const api = await fetch('https://opentdb.com/api.php?amount=10');
+    const jsonData = await api.json();
+    console.log(jsonData.results);
+  });
 };
 
 createHomeDisplay();
