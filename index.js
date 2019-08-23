@@ -1,8 +1,12 @@
+'use strict'
+
 const express = require('express');
 const request = require('request-promise');
+const ejs = require('ejs');
 
 const app = express();
 app.use(express.static('public'));
+app.engine('ejs', ejs.renderFile);
 
 // API生成のためのデータ
 const options = {
