@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+#question {
+  border-top: 1px black solid;
+  border-bottom: 1px black solid;
+  padding: 5px;
+}
+
+button {
+  display: block;
+  margin: 5px;
+}
+
+.hidden {
+  display: none;
+}
