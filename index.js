@@ -50,7 +50,8 @@ app.get('/', (req, res) => {
 })
 // APIを参照するページ
 app.get('/quizAPI', async (req, res) => {
-  res.json(await createQuizData());
+  const quizData = await createQuizData();
+  res.json(quizData);
 })
 
 app.listen(3000, () => {
